@@ -1,0 +1,1 @@
+Single thread : 4075 duration
