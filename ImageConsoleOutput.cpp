@@ -12,6 +12,9 @@ int main() {
     std::chrono::steady_clock::time_point start{ std::chrono::steady_clock::now() };
     
     TestConsoleImage test{"file.bmp", threads, tries};
+
+    test.setPosition(100, 100);
+
     test.draw();
     
     std::chrono::steady_clock::time_point end{ std::chrono::steady_clock::now() };

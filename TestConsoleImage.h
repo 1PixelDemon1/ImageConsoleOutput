@@ -23,6 +23,8 @@ private:
 		size_t height;
 	} size;
 	
+	COORD position;
+
 	HDC hdc;
 
 	void getBMPImageInfo(std::string file);
@@ -38,10 +40,14 @@ public:
 
 	TestConsoleImage(std::string filename, 
 		size_t lineDelta = 4, 
-		size_t allowedTries = 15) : lineDelta{ lineDelta }, hdc{GetDC(GetConsoleWindow())}, allowedTries{allowedTries} 
+		size_t allowedTries = 15) : lineDelta{ lineDelta }, hdc{GetDC(GetConsoleWindow())}, allowedTries{allowedTries}, position{}
 	{		
 		getBMPImageInfo(filename);
 	}
+
+	void setPosition(int16_t x, int16_t y);
+
+	COORD getPosition();
 
 	void draw();
 	
@@ -63,7 +69,7 @@ void TestConsoleImage::draw() {
 	{
 		for (size_t j = 0; j < size.width; j++)
 		{
-			SetPixel(hdc, j, size.height - i, RGB((int)map[span + j * 3 + 2], (int)map[span + j * 3 + 1], (int)map[span + j * 3]));
+			SetPixel(hdc, position.X + j, position.Y + size.height - i, RGB((int)map[span + j * 3 + 2], (int)map[span + j * 3 + 1], (int)map[span + j * 3]));
 		}
 		span += size.width * 3;
 	}
@@ -79,7 +85,7 @@ void TestConsoleImage::drawSegments(size_t from, size_t to) {
 	{
 		for (int32_t j = 0; j < size.width; j++)
 		{			
-			if (SetPixel(hdc, j, size.height - i, RGB((int)map[span + j * 3 + 2], (int)map[span + j * 3 + 1], (int)map[span + j * 3])) == -1) {
+			if (SetPixel(hdc, position.X + j, position.Y + size.height - i, RGB((int)map[span + j * 3 + 2], (int)map[span + j * 3 + 1], (int)map[span + j * 3])) == -1) {
 				tries++;
 				if (tries < allowedTries) j--;
 				else tries = 0;

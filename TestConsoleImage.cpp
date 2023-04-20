@@ -17,3 +17,13 @@ void TestConsoleImage::getBMPImageInfo(std::string file) {
 	
 	bmp.close();
 }
+
+
+void TestConsoleImage::setPosition(int16_t x, int16_t y) {
+	position.X = x;
+	position.Y = y;
+}
+
+COORD TestConsoleImage::getPosition() {
+	return position;
+}

@@ -1,1 +1,3 @@
 Single thread : 4075 duration
+Single thread : 4026 duration
+Single thread : 3950 duration
