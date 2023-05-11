@@ -8,7 +8,7 @@ typedef char byte_;
 #include <thread>
 
 
-class TestConsoleImage
+class TConsoleImage
 {
 private:
 	
@@ -38,7 +38,7 @@ private:
 public:
 
 
-	TestConsoleImage(std::string filename, 
+	TConsoleImage(std::string filename, 
 		size_t lineDelta = 4, 
 		size_t allowedTries = 15) : lineDelta{ lineDelta }, hdc{GetDC(GetConsoleWindow())}, allowedTries{allowedTries}, position{}
 	{		
@@ -51,18 +51,18 @@ public:
 
 	void draw();
 	
-	virtual ~TestConsoleImage() {
+	virtual ~TConsoleImage() {
 		delete[] map;
 	}
 };
 
 
 
-#ifndef TEST_CONSOLE_IMAGE_ // To avoid cyclic include. 
+#ifndef T_CONSOLE_IMAGE_ // To avoid cyclic include. 
 
 #ifdef SINGLE_THREAD_CONSOLE_IMAGE // If programmer wants to use single-thread drawing.
 
-void TestConsoleImage::draw() {
+void TConsoleImage::draw() {
 
 	size_t span{};
 	for (size_t i = 0; i < size.height; i++)
@@ -78,7 +78,7 @@ void TestConsoleImage::draw() {
 
 #else
 
-void TestConsoleImage::drawSegments(size_t from, size_t to) {
+void TConsoleImage::drawSegments(size_t from, size_t to) {
 	size_t span{ from * size.width * 3 }; // Previous lines.
 	size_t tries{};
 	for (size_t i = from; i < to; i++)
@@ -95,13 +95,13 @@ void TestConsoleImage::drawSegments(size_t from, size_t to) {
 	}
 }
 
-void TestConsoleImage::draw() {
+void TConsoleImage::draw() {
 
 	std::vector<std::thread> threads;
 
 	size_t span{ size.height / lineDelta };
 	for (size_t i = 0; i < lineDelta; i++) {
-		threads.push_back(std::thread(&TestConsoleImage::drawSegments, this, i * span, i * span + span));
+		threads.push_back(std::thread(&TConsoleImage::drawSegments, this, i * span, i * span + span));
 	}
 
 	for (auto& thread : threads) {
@@ -110,7 +110,7 @@ void TestConsoleImage::draw() {
 }
 
 #endif // SINGLE_THREAD_CONSOLE_IMAGE
-#endif // !TEST_CONSOLE_IMAGE_
+#endif // !T_CONSOLE_IMAGE_
 
 
 

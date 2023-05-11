@@ -1,8 +1,8 @@
 #pragma once
-#define TEST_CONSOLE_IMAGE_
-#include "TestConsoleImage.h"
+#define T_CONSOLE_IMAGE_
+#include "TConsoleImage.h"
 
-void TestConsoleImage::getBMPImageInfo(std::string file) {
+void TConsoleImage::getBMPImageInfo(std::string file) {
 	std::ifstream bmp(file, std::ios::binary);
 
 	byte_ header[54];
@@ -19,11 +19,11 @@ void TestConsoleImage::getBMPImageInfo(std::string file) {
 }
 
 
-void TestConsoleImage::setPosition(int16_t x, int16_t y) {
+void TConsoleImage::setPosition(int16_t x, int16_t y) {
 	position.X = x;
 	position.Y = y;
 }
 
-COORD TestConsoleImage::getPosition() {
+COORD TConsoleImage::getPosition() {
 	return position;
 }

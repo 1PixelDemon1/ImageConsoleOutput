@@ -128,10 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ImageConsoleOutput.cpp" />
-    <ClCompile Include="TestConsoleImage.cpp" />
+    <ClCompile Include="TConsoleImage.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TestConsoleImage.h" />
+    <ClInclude Include="TConsoleImage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
