@@ -18,12 +18,12 @@
     <ClCompile Include="ImageConsoleOutput.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="TestConsoleImage.cpp">
+    <ClCompile Include="TConsoleImage.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TestConsoleImage.h">
+    <ClInclude Include="TConsoleImage.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

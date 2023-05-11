@@ -1,1 +1,0 @@
-#include "TestConsoleImage.h"
