@@ -128,9 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ImageConsoleOutput.cpp" />
+    <ClCompile Include="lodepng.cpp" />
+    <ClCompile Include="PNGstConsoleIMage.cpp" />
     <ClCompile Include="TConsoleImage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="lodepng.h" />
+    <ClInclude Include="PNGstConsoleIMage.h" />
     <ClInclude Include="TConsoleImage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

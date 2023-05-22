@@ -7,7 +7,6 @@ typedef char byte_;
 #include <vector>
 #include <thread>
 
-
 class TConsoleImage
 {
 private:
