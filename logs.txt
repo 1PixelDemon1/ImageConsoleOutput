@@ -5,3 +5,17 @@ Single thread : 3825 duration
 Single thread : 3827 duration
 Single thread : 4018 duration
 4 threads : 3160 duration : 50 tries
+Single thread : 0 duration
+Single thread : 7854 duration
+Single thread : 1 duration
+Single thread : 2 duration
+Single thread : 2 duration
+Single thread : 8072 duration
+Single thread : 418 duration
+Single thread : 1727 duration
+Single thread : 8042 duration
+Single thread : 60 duration
+Single thread : 2 duration
+Single thread : 1095 duration
+Single thread : 1265 duration
+Single thread : 1653 duration

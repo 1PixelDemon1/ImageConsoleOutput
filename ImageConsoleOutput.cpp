@@ -2,6 +2,9 @@
 #define SINGLE_THREAD_CONSOLE_IMAGE // If you want your image draw run in single thread
 #include "TConsoleImage.h"
 
+#include "PNGstConsoleIMage.h"
+
+
 int main() {
 
 
@@ -11,7 +14,7 @@ int main() {
     
     std::chrono::steady_clock::time_point start{ std::chrono::steady_clock::now() };
     
-    TConsoleImage test{"file.bmp", threads, tries};
+    PNGstConsoleIMage test{"pngegg.png"};
 
     test.setPosition(100, 100);
 
