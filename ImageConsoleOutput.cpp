@@ -15,7 +15,7 @@ int main() {
     std::chrono::steady_clock::time_point start{ std::chrono::steady_clock::now() };
     
     PNGstConsoleIMage test{"pngegg.png"};
-
+    
     test.setPosition(100, 100);
 
     test.draw();

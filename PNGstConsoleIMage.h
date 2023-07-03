@@ -5,7 +5,7 @@ typedef unsigned char ubyte_;
 #include <windows.h>
 #include <string>
 #include <vector>
-#include "lodepng.h"
+#include "lodepng/lodepng.h"
 
 class PNGstConsoleIMage
 {

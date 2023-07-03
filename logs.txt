@@ -19,3 +19,5 @@ Single thread : 2 duration
 Single thread : 1095 duration
 Single thread : 1265 duration
 Single thread : 1653 duration
+Single thread : 1267 duration
+Single thread : 1304 duration
